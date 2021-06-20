@@ -4,29 +4,42 @@ import java.time.*;
 
 public class Main {
     public static void main(String[] args) {
-        // contoh objek data Karyawan
-        Karyawan k1 = new Karyawan();
-        k1.idKaryawan   = "K01";
-        k1.nama         = "Ervia Lindasari";
-        k1.tanggalLahir = LocalDate.of(1998, 3, 22);
-        k1.Alamat       = "Guntung Manggis";
-        k1.NoTelp       = "089688129532";
-        k1.Status       = "Belum Menikah";
-        k1.gol          = 123;
-        k1.LamaKerja    = 2;
+        // contoh objek data Karyawan constructor 1
+        Karyawan k2     = new Karyawan();
+
+        // contoh objek data Karyawan constructor 2
+        Karyawan k3     = new Karyawan("Ervia Lindasari", "Ervia1234");
+
+        // contoh objek data Karyawan constructor 3
+        Karyawan k1     = new Karyawan("K01",
+                                      "Ervia Lindasari",
+                                       LocalDate.of(1998, 3, 22),
+                                      "Guntung Manggis",
+                                      "089688129532",
+                                      "Belum Menikah",
+                                      1,
+                                      2);
+        k1.printKaryawan();
+
+        // contoh objek data Karyawan constructor 4
+        Karyawan k5     = new Karyawan();
+
+        // contoh objek data Karyawan constructor 5
+        Karyawan k6     = new Karyawan("Vika Permatasari", "Vika0111");
+
+        // contoh objek data Karyawan constructor 6
+        Karyawan k4     = new Karyawan("K02",
+                                       "Vika Permatasari",
+                                        LocalDate.of(1992, 7, 25),
+                                       "Guntung Payung",
+                                       "08125130006",
+                                       "Menikah",
+                                       2,
+                                       4);
+        k4.printKaryawan();
 
         // contoh objek data karyawan guru
-        Guru k2 = new Guru();
-        k2.idKaryawan     = "K02";
-        k2.nama           = "Ervinadya Aulina Dewi";
-        k2.tanggalLahir   = LocalDate.of(1996, 9, 13);
-        k2.Alamat         = "Guntung Payung";
-        k2.NoTelp         = "08125130006";
-        k2.Status         = "Menikah";
-        k2.gol            = 123;
-        k2.LamaKerja      = 2;
-        k2.nip            = "15112208";
-        k2.Jurusan        = "Matematika";
-        k2.BidangKeahlian = "MIPA";
+        Guru k7 = new Guru("K03", "Ervinadya Aulina Dewi", LocalDate.of(1996, 9, 13), "Guntung Payung", "08125130006", "Menikah", 2, 4, "15112208", "Matematika", "MIPA");
+        k7.printKaryawan();
     }
 }
