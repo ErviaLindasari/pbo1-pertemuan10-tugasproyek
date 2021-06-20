@@ -13,7 +13,19 @@ import java.time.*;
         int gol;
         int LamaKerja;
 
-    // method menghitung usia Karyawan (1)
+        // constructor (1)
+        public Karyawan(String idKaryawan, String nama, LocalDate tanggalLahir, String alamat, String noTelp, String status, int gol, int lamaKerja) {
+            this.idKaryawan = idKaryawan;
+            this.nama = nama;
+            this.tanggalLahir = tanggalLahir;
+            this.Alamat = alamat;
+            this.NoTelp = noTelp;
+            this.Status = status;
+            this.gol = gol;
+            this.LamaKerja = lamaKerja;
+        }
+
+        // method menghitung usia Karyawan (1)
     public int hitungUsia() {
         // mendapatkan tanggal hari ini
         LocalDate today = LocalDate.now();
@@ -26,7 +38,7 @@ import java.time.*;
     public long hitungGapok(){
         long gapok = 0;
         if (this.gol == 1) {
-            if (this.hitungUsia() < 40) {
+            if (this.hitungUsia() < 60) {
                 gapok = 3500000;
             } else {
                 gapok = 4500000;
@@ -64,7 +76,7 @@ import java.time.*;
     }
 
     // mencetak data Karyawan dan gaji pokok
-    public void printPegawai() {
+    public void printKaryawan() {
         System.out.println("ID Karyawan   : " + this.idKaryawan);
         System.out.println("Nama Karyawan : " + this.nama);
         System.out.println("Tgl Lahir     : " + this.tanggalLahir);
