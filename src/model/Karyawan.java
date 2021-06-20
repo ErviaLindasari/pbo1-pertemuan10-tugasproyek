@@ -29,18 +29,19 @@ import java.time.*;
 
         // constructor (2)
         public Karyawan() {
-            System.out.println("      Data Gaji Pegawai        ");
-            System.out.println("===============================");
+            System.out.println("      Data Gaji Karyawan       ");
+            System.out.println("*******************************");
         }
+
         // constructor (3)
         public Karyawan(String User, String Password)
         {
             this.User = User;
             this.Password = Password;
-            System.out.println("===============================");
+            System.out.println("*******************************");
             System.out.println("Username: "+this.User);
             System.out.println("Password: "+this.Password);
-            System.out.println("===============================");
+            System.out.println("*******************************");
         }
 
         // method menghitung usia Karyawan (1)
