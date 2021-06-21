@@ -4,7 +4,7 @@ import java.time.*;
 //inheritance/sub-class
 
     public class Guru extends Karyawan {
-        // 3 atribut tambahan untuk Guru
+        // atribut tambahan untuk Guru
         private String nip;
         private String Jurusan;
         private String bidangKeahlian;
@@ -15,7 +15,7 @@ import java.time.*;
             this.Jurusan = Jurusan;
             this.bidangKeahlian = bidangKeahlian;
         }
-        public Guru(String idKaryawan, String nama, LocalDate tanggalLahir, String alamat, String noTelp, String status, int gol, int lamaKerja,
+        public Guru(String idKaryawan, String nama, LocalDate tanggalLahir, String alamat, String noTelp, String status, int gol, int lamaKerja, String riwayat,
                     String nip, String jurusan, String bidangKeahlian) {
             setIdKaryawan(idKaryawan);
             setNama(nama);
@@ -25,6 +25,7 @@ import java.time.*;
             setStatus(status);
             setGol(gol);
             setLamaKerja(lamaKerja);
+            setRiwayat(riwayat);
 
             this.nip = nip;
             this.Jurusan = jurusan;
@@ -72,6 +73,14 @@ import java.time.*;
         public void setBidangKeahlian(String bidangKeahlian) {
             this.bidangKeahlian = bidangKeahlian;
         }
+    // method overriding (9)
+        public String getRiwayat() {
+            return super.getRiwayat();
+        }
+    // method overriding (10)
+        public boolean Bonus(int bonus) {
+            return super.Bonus(bonus);
+        }
 
         // cetak data Karyawan, rincian gaji, total gaji
         public void printKaryawan() {
@@ -92,5 +101,6 @@ import java.time.*;
             System.out.println("Tunjangan Karyawan : Rp " + this.hitungTunjangan());
             System.out.println("Tunjangan Guru     : Rp " + this.hitungTunjanganGuru());
             System.out.println("Tunjangan Fungsi   : Rp " + this.hitungTunjanganFungsional());
+            System.out.println("Riwayat Kerja      : " + this.riwayat);
         }
     }
