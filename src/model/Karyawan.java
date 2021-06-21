@@ -4,7 +4,7 @@ import java.time.*;
 
 // parentclas / superclass
     public class Karyawan {
-        // atribut
+       // atribut
        private String idKaryawan;
        private String nama;
        private LocalDate tanggalLahir;
@@ -15,9 +15,11 @@ import java.time.*;
        private int LamaKerja;
        private String User;
        private int Password;
+       String riwayat;
+       int bonus;
 
         // constructor (1)
-        public Karyawan(String idKaryawan, String nama, LocalDate tanggalLahir, String alamat, String noTelp, String status, int gol, int lamaKerja) {
+        public Karyawan(String idKaryawan, String nama, LocalDate tanggalLahir, String alamat, String noTelp, String status, int gol, int lamaKerja, String riwayat, int bonus) {
             this.idKaryawan = idKaryawan;
             this.nama = nama;
             this.tanggalLahir = tanggalLahir;
@@ -26,15 +28,17 @@ import java.time.*;
             this.Status = status;
             this.gol = gol;
             this.LamaKerja = lamaKerja;
+            this.riwayat = riwayat;
+            this.bonus = bonus;
         }
 
-        // constructor (1)
+    // constructor (1)
         public Karyawan() {
             System.out.println("      Data Gaji Karyawan       ");
             System.out.println("*******************************");
         }
 
-        // constructor (2)
+    // constructor (2)
         public Karyawan(String User)
         {
             this.User = User;
@@ -42,19 +46,19 @@ import java.time.*;
             System.out.println("Username: "+this.User);
             System.out.println("*******************************");
         }
-        // construktor (3)
 
+    // construktor (3)
         public Karyawan(int password) {
            this.Password = password;
             System.out.println("Password: "+this.Password);
             System.out.println("*******************************");
         }
 
-        // method menghitung usia Karyawan (1)
-    public int hitungUsia() {
-        // mendapatkan tanggal hari ini
+    // method menghitung usia Karyawan (1)
+        public int hitungUsia() {
+    // mendapatkan tanggal hari ini
         LocalDate today = LocalDate.now();
-        // hitung selisih tanggal lahir dan tanggal hari ini
+    // hitung selisih tanggal lahir dan tanggal hari ini
         Period selisih = Period.between(this.tanggalLahir, today);
         return selisih.getYears();
     }
@@ -82,7 +86,7 @@ import java.time.*;
     public long hitungBonus() {
         long bonus =0;
         if (this.LamaKerja >= 6) {
-            bonus = 500000;
+            bonus = 100000;
         } else {
             bonus = 0;
         }
@@ -181,6 +185,26 @@ import java.time.*;
         public void setPassword(int password) {
             Password = password;
         }
+    // method (25)
+    public String getRiwayat() {
+        return riwayat;
+    }
+    // method (26)
+    public void setRiwayat(String riwayat) {
+        this.riwayat = riwayat;
+    }
+    // method overloading (27)
+    public boolean Riwayat(String riwayat) {
+        String  Riwayat = "Riwayat Kerja Anda"+this.riwayat;
+        System.out.println(Riwayat);
+        return false;
+    }
+    // method overloading (28)
+    public boolean Bonus(int bonus) {
+        String Bonus = "Tambahan bonus yang Anda terima " + this.hitungBonus();
+        System.out.println(Bonus);
+        return false;
+    }
 
         // mencetak data Karyawan dan gaji pokok
     public void printKaryawan() {
@@ -195,6 +219,7 @@ import java.time.*;
         System.out.println("Gaji Pokok    : Rp " + this.hitungGapok());
         System.out.println("Bonus         : Rp " + this.hitungBonus());
         System.out.println("Tunjangan     : Rp " + this.hitungTunjangan());
+        System.out.println("Riwayat Kerja : " + this.riwayat);
         System.out.println();
     }
 }
