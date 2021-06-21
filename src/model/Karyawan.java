@@ -2,18 +2,19 @@ package model;
 
 import java.time.*;
 
+// parentclas / superclass
     public class Karyawan {
-        // 8 atribut
-        String idKaryawan;
-        String nama;
-        LocalDate tanggalLahir;
-        String Alamat;
-        String NoTelp;
-        String Status;
-        int gol;
-        int LamaKerja;
-        String User;
-        String Password;
+        // atribut
+       private String idKaryawan;
+       private String nama;
+       private LocalDate tanggalLahir;
+       private String Alamat;
+       private String NoTelp;
+       private String Status;
+       private int gol;
+       private int LamaKerja;
+       private String User;
+       private int Password;
 
         // constructor (1)
         public Karyawan(String idKaryawan, String nama, LocalDate tanggalLahir, String alamat, String noTelp, String status, int gol, int lamaKerja) {
@@ -27,19 +28,24 @@ import java.time.*;
             this.LamaKerja = lamaKerja;
         }
 
-        // constructor (2)
+        // constructor (1)
         public Karyawan() {
             System.out.println("      Data Gaji Karyawan       ");
             System.out.println("*******************************");
         }
 
-        // constructor (3)
-        public Karyawan(String User, String Password)
+        // constructor (2)
+        public Karyawan(String User)
         {
             this.User = User;
-            this.Password = Password;
             System.out.println("*******************************");
             System.out.println("Username: "+this.User);
+            System.out.println("*******************************");
+        }
+        // construktor (3)
+
+        public Karyawan(int password) {
+           this.Password = password;
             System.out.println("Password: "+this.Password);
             System.out.println("*******************************");
         }
@@ -94,7 +100,89 @@ import java.time.*;
         return tunjangan;
     }
 
-    // mencetak data Karyawan dan gaji pokok
+    // getter dan setter
+    // method (5)
+        public String getIdKaryawan() {
+            return idKaryawan;
+        }
+    // method (6)
+        public void setIdKaryawan(String idKaryawan) {
+            this.idKaryawan = idKaryawan;
+        }
+    // method (7)
+        public String getNama() {
+            return nama;
+        }
+    // method (8)
+        public void setNama(String nama) {
+            this.nama = nama;
+        }
+    // method (9)
+        public LocalDate getTanggalLahir() {
+            return tanggalLahir;
+        }
+    // method (10)
+        public void setTanggalLahir(LocalDate tanggalLahir) {
+            this.tanggalLahir = tanggalLahir;
+        }
+    // method (11)
+        public String getAlamat() {
+            return Alamat;
+        }
+    // method (12)
+        public void setAlamat(String alamat) {
+            Alamat = alamat;
+        }
+    // method (13)
+        public String getNoTelp() {
+            return NoTelp;
+        }
+    // method (14)
+        public void setNoTelp(String noTelp) {
+            NoTelp = noTelp;
+        }
+    // method (15)
+        public String getStatus() {
+            return Status;
+        }
+    // method (16)
+        public void setStatus(String status) {
+            Status = status;
+        }
+    // method (17)
+        public int getGol() {
+            return gol;
+        }
+    // method (18)
+        public void setGol(int gol) {
+            this.gol = gol;
+        }
+    // method (19)
+        public int getLamaKerja() {
+            return LamaKerja;
+        }
+    // method (20)
+        public void setLamaKerja(int lamaKerja) {
+            LamaKerja = lamaKerja;
+        }
+    // method (21)
+        public String getUser() {
+            return User;
+        }
+    // method (22)
+        public void setUser(String user) {
+            User = user;
+        }
+    // method (23)
+        public int getPassword() {
+            return Password;
+        }
+    // method (24)
+        public void setPassword(int password) {
+            Password = password;
+        }
+
+        // mencetak data Karyawan dan gaji pokok
     public void printKaryawan() {
         System.out.println("ID Karyawan   : " + this.idKaryawan);
         System.out.println("Nama Karyawan : " + this.nama);
@@ -107,5 +195,6 @@ import java.time.*;
         System.out.println("Gaji Pokok    : Rp " + this.hitungGapok());
         System.out.println("Bonus         : Rp " + this.hitungBonus());
         System.out.println("Tunjangan     : Rp " + this.hitungTunjangan());
+        System.out.println();
     }
 }
