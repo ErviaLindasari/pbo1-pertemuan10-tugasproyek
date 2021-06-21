@@ -20,6 +20,7 @@ public class Main {
         k1.setStatus("Belum Menikah");
         k1.setGol(1);
         k1.setLamaKerja(2);
+        k1.setRiwayat("S1");
 
         k1.printKaryawan();
 
@@ -39,6 +40,7 @@ public class Main {
         k4.setStatus("Menikah");
         k4.setGol(2);
         k4.setLamaKerja(4);
+        k4.setRiwayat("S1");
 
         k4.printKaryawan();
 
@@ -52,10 +54,12 @@ public class Main {
         g1.setNoTelp("08125130006");
         g1.setStatus("Menikah");
         g1.setGol(3);
-        g1.setLamaKerja(5);
+        g1.setLamaKerja(6);
         g1.setJurusan("Matematika");
         g1.setBidangKeahlian("MIPA");
+        g1.setRiwayat("S2");
 
         g1.printKaryawan();
+        g1.Bonus(100000);
     }
 }
